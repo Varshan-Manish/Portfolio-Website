@@ -1,72 +1,140 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
-import { SparklesIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { Typewriter } from "react-simple-typewriter";
+import Lottie from "react-lottie";
+import Link from "next/link";
+
+// Lottie animation data array
+const lottieAnimations = [
+  {
+    animationData: require("/public/Animation-1747032549080.json"),
+    label: "Full Stack Web Development",
+  },
+  {
+    animationData: require("/public/Animation-1747032139633.json"),
+    label: "Mobile App Development",
+  },
+  {
+    animationData: require("/public/Animation-1747032068394.json"),
+    label: "Blockchain Development",
+  },
+  {
+    animationData: require("/public/Animation-1747031522285.json"),
+    label: "Software Engineering",
+  },
+];
 
 const HeroContent = () => {
+  const [currentAnimation, setCurrentAnimation] = useState(0);
+  const [fadeIn, setFadeIn] = useState(true);
+
+  // Change animation every 3 seconds with fade effect
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setFadeIn(false);
+      setTimeout(() => {
+        setCurrentAnimation(
+          (prevIndex) => (prevIndex + 1) % lottieAnimations.length
+        );
+        setFadeIn(true);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 mt-32 md:mt-40 w-full z-[20] gap-10"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
-          </h1>
-        </motion.div>
-
+      {/* LEFT TEXT */}
+      <div className="h-full w-full flex flex-col justify-center text-start">
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col text-4xl md:text-6xl font-bold text-white max-w-[600px]"
         >
-          <span>
-            Providing
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              the best{" "}
+          <span className="block">Welcome. I am</span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-200">
+            Varshan Manish
+          </span>
+
+          <span className="block mt-6 md:mt-8 text-2xl md:text-3xl">
+            and I have been exploring domains like{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
+              <Typewriter
+                words={[
+                  "Full Stack Web Development",
+                  "Mobile Application Development",
+                  "Blockchain Development",
+                  "Software Engineering",
+                ]}
+                loop={true}
+                cursor={true}
+                cursorStyle="|"
+                typeSpeed={40}
+                deleteSpeed={30}
+                delaySpeed={1000}
+              />
             </span>
-            project exprience
           </span>
         </motion.div>
 
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
-        >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
-        </motion.p>
-        <motion.a
+        {/* Button wrapper adjusted for mobile centering */}
+        <motion.div
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="flex md:block justify-center md:justify-start mt-6"
         >
-          Learn More!
-        </motion.a>
+          <Link
+            href="/ComingSoon"
+            className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] w-full md:w-auto text-lg"
+          >
+            Learn More
+          </Link>
+        </motion.div>
       </div>
 
+      {/* RIGHT LOTTIE ANIMATIONS (Hidden on small screens) */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="hidden md:flex justify-end items-center w-[50%] h-full"
       >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-        />
+        <div
+          key={currentAnimation}
+          className="flex flex-col items-center justify-center h-full"
+        >
+          {/* Lottie with fade transition */}
+          <motion.div
+            className="w-full h-full flex justify-center items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: fadeIn ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Lottie
+              options={{
+                animationData: lottieAnimations[currentAnimation].animationData,
+                loop: true,
+                autoplay: true,
+              }}
+              height={500}
+              width={500}
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-4 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 text-center"
+          >
+            {lottieAnimations[currentAnimation].label}
+          </motion.div>
+        </div>
       </motion.div>
     </motion.div>
   );

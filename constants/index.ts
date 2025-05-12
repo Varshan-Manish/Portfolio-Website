@@ -1,257 +1,227 @@
-export const Skill_data = [
-    {
-      skill_name: "Html 5",
-      Image: "/html.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Css",
-      Image: "/css.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Java Script",
-      Image: "/js.png",
-      width: 65,
-      height: 65,
-    },
-    {
-      skill_name: "Tailwind Css",
-      Image: "/tailwind.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "React",
-      Image: "/react.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Redux",
-      Image: "/redux.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "React Query",
-      Image: "/reactquery.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Type Script",
-      Image: "/ts.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Next js 13",
-      Image: "/next.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Framer Motion",
-      Image: "/framer.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Stripe Payment",
-      Image: "/stripe.webp",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Node js",
-      Image: "/node-js.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Mongo db",
-      Image: "/mongodb.png",
-      width: 40,
-      height: 40,
-    },
-  
-  ];
-  
-  export const Socials = [
-    {
-      name: "Discord",
-      src: "/instagram.svg",
-    },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
-    },
-    {
-      name: "Instagram",
-      src: "/discord.svg",
-    },
-  ];
-  
-  
-  
-  export const Frontend_skill = [
-    {
-      skill_name: "Html 5",
-      Image: "/html.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Css",
-      Image: "/css.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Java Script",
-      Image: "/js.png",
-      width: 65,
-      height: 65,
-    },
-    {
-      skill_name: "Tailwind Css",
-      Image: "/tailwind.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Material UI",
-      Image: "/mui.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "React",
-      Image: "/react.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Redux",
-      Image: "/redux.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "React Query",
-      Image: "/reactquery.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Type Script",
-      Image: "/ts.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Next js 13",
-      Image: "/next.png",
-      width: 80,
-      height: 80,
-    },
-  ];
-  
-  export const Backend_skill = [
-    {
-      skill_name: "Node js",
-      Image: "/node-js.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Express js",
-      Image: "/express.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Mongo db",
-      Image: "/mongodb.png",
-      width: 40,
-      height: 40,
-    },
-    {
-      skill_name: "Fire base",
-      Image: "/Firebase.png",
-      width: 55,
-      height: 55,
-    },
-    {
-      skill_name: "Postger SQL",
-      Image: "/postger.png",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "My SQL",
-      Image: "/mysql.png",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Prisma",
-      Image: "/prisma.webp",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Graphql",
-      Image: "/graphql.png",
-      width: 80,
-      height: 80,
-    },
-  ];
-  
-  export const Full_stack = [
-    {
-      skill_name: "React Native",
-      Image: "/ReactNative .png",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Tauri",
-      Image: "/tauri.svg",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Docker",
-      Image: "/docker.webp",
-      width: 70,
-      height: 70,
-    },
-  
-    {
-      skill_name: "Figma",
-      Image: "/figma.png",
-      width: 50,
-      height: 50,
-    },
-  
-  ];
-  
-  
-  
-  export const Other_skill = [
-    {
-      skill_name: "Go",
-      Image: "/go.png",
-      width: 60,
-      height: 60,
-    },
-  ];
-  
-  
-  
-  
-  
+export const Programming_languages = [
+  {
+    skill_name: "C/C++",
+    Image: "/skills/c-.png",
+    width: 80,
+    height: 80,
+    label: "C/C++",
+  },
+  {
+    skill_name: "Java",
+    Image: "/skills/java.png",
+    width: 80,
+    height: 80,
+    label: "Java",
+  },
+  {
+    skill_name: "Python",
+    Image: "/skills/python.png",
+    width: 80,
+    height: 80,
+    label: "Python",
+  },
+  {
+    skill_name: "JavaScript",
+    Image: "/skills/js.png",
+    width: 80,
+    height: 80,
+    label: "JavaScript",
+  },
+  {
+    skill_name: "Dart",
+    Image: "/skills/dart.png",
+    width: 80,
+    height: 80,
+    label: "Dart",
+  },
+  {
+    skill_name: "Solidity",
+    Image: "/skills/soliditiy.png",
+    width: 80,
+    height: 80,
+    label: "Solidity",
+  },
+];
+
+export const Socials = [
+  {
+    name: "Linkedin",
+    src: "/linkedin.svg",
+    link: "https://www.linkedin.com/in/varshan-manish-12a697274/",
+  },
+  {
+    name: "Github",
+    src: "/github.svg",
+    link: "https://github.com/Varshan-Manish",
+  },
+];
+
+export const Web_Development = [
+  {
+    skill_name: "HTML",
+    Image: "/skills/html.png",
+    width: 80,
+    height: 80,
+    label: "HTML",
+  },
+  {
+    skill_name: "CSS",
+    Image: "/skills/css.png",
+    width: 80,
+    height: 80,
+    label: "CSS",
+  },
+  {
+    skill_name: "Bootstrap",
+    Image: "/skills/bootstrap.png",
+    width: 80,
+    height: 80,
+    label: "Bootstrap",
+  },
+  {
+    skill_name: "React",
+    Image: "/skills/react.png",
+    width: 80,
+    height: 80,
+    label: "ReactJS",
+  },
+  {
+    skill_name: "Express",
+    Image: "/skills/express.png",
+    width: 80,
+    height: 80,
+    label: "ExpressJS",
+  },
+  {
+    skill_name: "Node",
+    Image: "/skills/node.png",
+    width: 80,
+    height: 80,
+    label: "NodeJS",
+  },
+];
+
+export const Blockchain_Skill = [
+  {
+    skill_name: "Ethereum",
+    Image: "/skills/ethereum.png",
+    width: 80,
+    height: 80,
+    label: "Ethereum Blockchain",
+  },
+  {
+    skill_name: "EtherJS",
+    Image: "/skills/ethers.png",
+    width: 80,
+    height: 80,
+    label: "EthersJS",
+  },
+  {
+    skill_name: "Hardhat",
+    Image: "/skills/Hardhat.png",
+    width: 80,
+    height: 80,
+    label: "Hardhat",
+  },
+  {
+    skill_name: "Truffle",
+    Image: "/skills/truffle.png",
+    width: 80,
+    height: 80,
+    label: "Truffle",
+  },
+  {
+    skill_name: "Ganache",
+    Image: "/skills/ganache.png",
+    width: 80,
+    height: 80,
+    label: "Ganache",
+  },
+  {
+    skill_name: "Metamask",
+    Image: "/skills/metamask.png",
+    width: 80,
+    height: 80,
+    label: "Metamask",
+  },
+];
+
+export const Database = [
+  {
+    skill_name: "MySQL",
+    Image: "/skills/mysql.png",
+    width: 70,
+    height: 70,
+    label: "MySQL",
+  },
+  {
+    skill_name: "SQLite",
+    Image: "/skills/sqlite.png",
+    width: 70,
+    height: 70,
+    label: "SQLite",
+  },
+  {
+    skill_name: "Oracle SQL",
+    Image: "/skills/Oracle.png",
+    width: 70,
+    height: 70,
+    label: "OracleSQL",
+  },
+  {
+    skill_name: "MongoDB",
+    Image: "/skills/mongo.png",
+    width: 70,
+    height: 70,
+    label: "MongoDB",
+  },
+];
+
+export const Cloud_Computing = [
+  {
+    skill_name: "AWS",
+    Image: "/skills/aawws.png",
+    width: 70,
+    height: 70,
+    label: "Amazon Web Services",
+  },
+  {
+    skill_name: "Google Cloud Platform",
+    Image: "/skills/google.png",
+    width: 70,
+    height: 70,
+    label: "Google Cloud Platform",
+  },
+  {
+    skill_name: "Firebase",
+    Image: "/skills/firebase.png",
+    width: 70,
+    height: 70,
+    label: "Firebase",
+  },
+];
+export const Developer_Tools = [
+  {
+    skill_name: "Git",
+    Image: "/skills/git.png",
+    width: 70,
+    height: 70,
+    label: "Git/GitHub",
+  },
+  {
+    skill_name: "Docker",
+    Image: "/skills/docker.png",
+    width: 70,
+    height: 70,
+    label: "Docker",
+  },
+];
+export const Mobile_Development = [
+  {
+    skill_name: "Flutter",
+    Image: "/skills/flutter.png",
+    width: 70,
+    height: 70,
+    label: "Flutter",
+  },
+];

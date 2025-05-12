@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
@@ -63,9 +61,51 @@
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
+@keyframes swivel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-
+.animate-swivel {
+  animation: swivel 3s ease-out forwards;
+}
 
 html {
   scroll-behavior: smooth;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.7s ease-out;
+}
+/* Custom Styles for Swiper Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-next {
+  right: -20px; /* Position the next button outside the swiper */
+}
+
+.swiper-button-prev {
+  left: -20px; /* Position the previous button outside the swiper */
+}
+.swiper-pagination {
+  background-color: white; /* Change the background of the pagination area to white */
+  padding: 10px; /* Optional: add padding around the pagination dots */
 }

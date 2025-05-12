@@ -1,9 +1,13 @@
+// Skills.tsx
+"use client";
 import {
-  Backend_skill,
-  Frontend_skill,
-  Full_stack,
-  Other_skill,
-  Skill_data,
+  Blockchain_Skill,
+  Web_Development,
+  Database,
+  Cloud_Computing,
+  Programming_languages,
+  Developer_Tools,
+  Mobile_Development,
 } from "@/constants";
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
@@ -13,79 +17,57 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
+      className="relative flex flex-col items-center justify-center gap-6 h-full overflow-hidden pb-40 py-20"
     >
-      <SkillText />
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
+      {/* Video Background */}
+      <div className="absolute inset-0 -z-10 opacity-30 pointer-events-none">
+        <video
+          className="w-full h-full object-cover"
+          preload="false"
+          playsInline
+          loop
+          muted
+          autoPlay
+          src="/cards-video.webm"
+        />
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
+      {/* Content */}
+      <div className="relative z-[25] scale-90 w-full select-text">
+        <SkillText />
 
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
-            src="/cards-video.webm"
-          />
+        {/* Skill Categories */}
+        <div className="flex flex-col w-full space-y-6">
+          {[
+            { title: "Programming Languages", data: Programming_languages },
+            { title: "Web Development", data: Web_Development },
+            { title: "Blockchain Development", data: Blockchain_Skill },
+            { title: "Database Management", data: Database },
+            { title: "Cloud Computing Technologies", data: Cloud_Computing },
+            { title: "Developer Tools", data: Developer_Tools },
+            {
+              title: "Mobile Application Development",
+              data: Mobile_Development,
+            },
+          ].map((category, catIdx) => (
+            <div key={catIdx}>
+              <h3 className="text-xl font-bold text-center text-white mb-2">
+                {category.title}
+              </h3>
+              <div className="flex flex-row justify-around flex-wrap gap-4 items-center">
+                {category.data.map((image, index) => (
+                  <SkillDataProvider
+                    key={index}
+                    src={image.Image}
+                    width={image.width}
+                    height={image.height}
+                    index={index}
+                    label={image.label}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
