@@ -1,6 +1,10 @@
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
-import Projects from "@/components/main/Projects";
+import dynamic from "next/dynamic";
+
+const Projects = dynamic(() => import("@/components/main/Projects"), {
+  ssr: false,
+});
 import Skills from "@/components/main/Skills";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
