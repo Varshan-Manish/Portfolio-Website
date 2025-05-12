@@ -1,5 +1,6 @@
 import React from "react";
-import HeroContent from "../sub/HeroContent";
+import dynamic from "next/dynamic";
+const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
 
 const Hero = () => {
   return (
