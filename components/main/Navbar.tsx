@@ -12,8 +12,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-6 md:px-10 z-[30]">
-      <div className="w-full h-[65px] flex items-center justify-between m-auto">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10 z-[30]">
+      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         {/* Logo + Name (hidden on mobile) */}
         <a href="/" className="h-auto w-auto flex flex-row items-center">
           <span className="font-bold ml-[10px] hidden md:block text-gray-300">
@@ -22,7 +22,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
+        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#about-me" className="cursor-pointer">
               About me
@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         {/* Social Icons (always visible) */}
-        <div className="flex flex-row gap-5 items-center z-[30]">
+        <div className="flex flex-row gap-5">
           {Socials.map((social) => (
             <a
               key={social.name}
@@ -49,8 +49,8 @@ const Navbar = () => {
               <Image
                 src={social.src}
                 alt={social.name}
-                width={24}
-                height={24}
+                width={32}
+                height={32}
               />
             </a>
           ))}
@@ -76,7 +76,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden w-full bg-[#030014e6] border-t border-[#7042f861] mt-2 rounded-b-lg text-gray-200">
           <div className="flex flex-col items-center justify-center py-4 gap-4">
-            <a href="#about-me" className="cursor-pointer" onClick={toggleMenu}>
+            <a href="#aboutme" className="cursor-pointer" onClick={toggleMenu}>
               About me
             </a>
             <a href="#skills" className="cursor-pointer" onClick={toggleMenu}>

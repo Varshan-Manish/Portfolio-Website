@@ -70,14 +70,21 @@ const Projects = () => {
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
             <div
-              className="w-full h-full"
               onMouseEnter={(e) => {
-                const swiperEl = e.currentTarget.closest(".swiper").swiper;
-                swiperEl.autoplay.stop();
+                const swiperEl = e.currentTarget.closest(
+                  ".swiper"
+                ) as HTMLElement & { swiper: any };
+                if (swiperEl?.swiper) {
+                  swiperEl.swiper.autoplay.stop();
+                }
               }}
               onMouseLeave={(e) => {
-                const swiperEl = e.currentTarget.closest(".swiper").swiper;
-                swiperEl.autoplay.start();
+                const swiperEl = e.currentTarget.closest(
+                  ".swiper"
+                ) as HTMLElement & { swiper: any };
+                if (swiperEl?.swiper) {
+                  swiperEl.swiper.autoplay.start();
+                }
               }}
             >
               <ProjectCard

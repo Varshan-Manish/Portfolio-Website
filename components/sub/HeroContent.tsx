@@ -64,7 +64,7 @@ const HeroContent = () => {
           </span>
 
           <span className="block mt-6 md:mt-8 text-2xl md:text-3xl">
-            and I have been exploring domains like{" "}
+            and I have been exploring domains like<br></br>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
               <Typewriter
                 words={[

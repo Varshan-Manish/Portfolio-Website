@@ -8,7 +8,10 @@ import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const AboutMe = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen w-full px-6 py-10 relative bg-black">
+    <section
+      id="about-me"
+      className="flex flex-col items-center justify-center min-h-screen w-full px-6 py-10 relative bg-black"
+    >
       {/* Heading */}
       <motion.h1
         variants={slideInFromLeft(0.3)}

@@ -54,6 +54,11 @@ export const Socials = [
     src: "/github.svg",
     link: "https://github.com/Varshan-Manish",
   },
+  {
+    name: "Email",
+    src: "/email.svg",
+    link: "mailto:varshan.manish2022@vitstudent.ac.in",
+  },
 ];
 
 export const Web_Development = [
