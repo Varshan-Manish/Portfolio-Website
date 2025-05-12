@@ -1,12 +1,15 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import ProjectCard from "../sub/ProjectCard";
+import type { Swiper as SwiperType } from "swiper";
 
 const Projects = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
+
   const projects = [
     {
       src: "/projects/expenseElixir.png",
@@ -46,6 +49,9 @@ const Projects = () => {
           delay: 4000,
           disableOnInteraction: false,
         }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -70,22 +76,8 @@ const Projects = () => {
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
             <div
-              onMouseEnter={(e) => {
-                const swiperEl = e.currentTarget.closest(
-                  ".swiper"
-                ) as HTMLElement & { swiper: any };
-                if (swiperEl?.swiper) {
-                  swiperEl.swiper.autoplay.stop();
-                }
-              }}
-              onMouseLeave={(e) => {
-                const swiperEl = e.currentTarget.closest(
-                  ".swiper"
-                ) as HTMLElement & { swiper: any };
-                if (swiperEl?.swiper) {
-                  swiperEl.swiper.autoplay.start();
-                }
-              }}
+              onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+              onMouseLeave={() => swiperRef.current?.autoplay?.start()}
             >
               <ProjectCard
                 src={project.src}
