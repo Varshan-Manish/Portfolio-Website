@@ -12,30 +12,34 @@ const Projects = () => {
 
   const projects = [
     {
-      src: "/projects/expenseElixir.png",
+      src: "/projects/ExpenseElixir/expenseElixir.png",
       title: "Expense Elixir",
       desc: "A modern expense tracking application with rich visualizations and intuitive UI for budgeting.",
+      link: "/ExpenseElixirProject/",
     },
     {
       src: "/CardImage.png",
       title: "Interactive Website Cards",
       desc: "Dynamic and responsive website cards to showcase services or projects interactively.",
+      link: "/404/",
     },
     {
       src: "/SpaceWebsite.png",
       title: "Space Themed Website",
       desc: "Immersive space-themed landing page designed with animations and parallax effects.",
+      link: "/404/",
     },
     {
       src: "/NextWebsite.png",
       title: "Modern Next.js Portfolio",
       desc: "A sleek developer portfolio built with Next.js featuring server-side rendering and animations.",
+      link: "/404/",
     },
   ];
 
   return (
     <div
-      className="flex flex-col items-center justify-center py-16 px-4 md:px-8 z-[25]"
+      className="flex flex-col items-center justify-center py-16 px-4 md:px-8 z-[20]"
       id="projects"
     >
       <h1 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-8">
@@ -83,7 +87,7 @@ const Projects = () => {
                 src={project.src}
                 title={project.title}
                 description={project.desc}
-                link="/ComingSoon"
+                link={project.link}
               />
             </div>
           </SwiperSlide>

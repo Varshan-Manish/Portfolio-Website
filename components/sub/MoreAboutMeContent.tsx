@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // Split heading text into animated falling words
 const fallingText = (text: string) => {
@@ -101,7 +102,7 @@ const Card = ({
             />
             <MiniCard
               heading="Sports"
-              details="I like playing the cricket and games like chess."
+              details="I like playing cricket and games like chess."
             />
           </>
         )}
@@ -133,7 +134,7 @@ const Card = ({
             />
             <MiniCard
               heading="Hindi"
-              details="I know to read, write and speak."
+              details="Can Manage reading, writing and speaking"
             />
           </>
         )}
@@ -145,7 +146,7 @@ const Card = ({
             />
             <MiniCard
               heading="Problem-Solving"
-              details="Skilled at breaking down problems and finding innovative solutions."
+              details="Confident at breaking down problems and finding innovative solutions."
             />
             <MiniCard
               heading="Leadership"
@@ -225,7 +226,7 @@ const MoreAboutMeContent = () => {
         </motion.div>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-8">
+      <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
         {[
           {
             title: "Education",
@@ -275,6 +276,16 @@ const MoreAboutMeContent = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Button placed below all cards */}
+      <Link
+        href="https://drive.google.com/file/d/1JsgSIvq4txbu3yy-SSu55qRMe65bP_PA/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-gradient-to-r from-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform duration-300"
+      >
+        Download Resume
+      </Link>
     </motion.section>
   );
 };
