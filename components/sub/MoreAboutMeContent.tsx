@@ -216,7 +216,7 @@ const MoreAboutMeContent = () => {
           }}
         >
           {fallingText(
-            "I am a 3rd year student studying in VIT University Vellore. I am 20 years old. I live in Chennai, India. I am willing to relocate anywhere in India to work. I am a hard worker and I won't mind working even 12 hours a day if that's what it takes to make a living and land a job."
+            "I am a 3rd year student studying in VIT University Vellore. I am 20 years old. I live in Chennai, India. I am willing to relocate anywhere in India to work. I am a hard worker, a go getter and once I take up a job I will never quit until its done."
           )}
           <br />
           <br />

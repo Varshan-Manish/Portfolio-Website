@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const ExpenseElixirProjectContent = () => {
+const Covid19ManagerProjectContent = () => {
   return (
     <motion.section
       className="relative z-[10] flex flex-col justify-center items-center px-6 pt-[10rem] pb-20 text-white text-center"
@@ -12,39 +12,38 @@ const ExpenseElixirProjectContent = () => {
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
-          Expense Elixir – Smart Budgeting App
+          Covid-19 Manager And Tracker API - With Google App Engine
         </span>
       </h1>
+
       <ul className="max-w-3xl text-left text-gray-300 text-lg mb-10 list-disc list-inside space-y-4">
         <li>
-          Created a full-stack expense tracking app that helps users categorize,
-          track, and analyze their daily spending habits.
+          Built a RESTful API in Node.js to track Covid-19 cases, testing
+          centers, hospitals, and zones.
         </li>
         <li>
-          Built the frontend using React and Tailwind CSS with a clean,
-          mobile-first design and responsive charts.
+          Implemented secure CRUD operations with Express and PostgreSQL for
+          district and state-level data.
         </li>
         <li>
-          Developed a Node.js + Express backend with JWT-based authentication,
-          managing users and transactions securely.
+          Added JWT-based authentication to ensure safe access for admin users.
         </li>
         <li>
-          Used MongoDB to store user data, transaction history, and
-          budget-related insights with high scalability.
+          Enabled dynamic zone status updates based on active case thresholds.
         </li>
         <li>
-          Integrated monthly summaries and pie/bar visualizations for expense
-          breakdown using Chart.js.
+          Wrote modular code with middleware for validation, sanitization, and
+          error handling.
         </li>
         <li>
-          Learned modular API development, user session management, and secure
-          full-stack integration with React.
+          Learned API structuring, REST principles, and real-world backend
+          implementation under constraints.
         </li>
       </ul>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-md">
         <a
-          href="https://github.com/Varshan-Manish/ExpenseElixir"
+          href="https://github.com/Varshan-Manish/Covid-19-Tracker-And-Management"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -52,7 +51,7 @@ const ExpenseElixirProjectContent = () => {
           GitHub
         </a>
         <a
-          href="https://drive.google.com/file/d/12mSvoZ7K1zFKgMABG8W1KbUEo07JVSjY/view?usp=sharing"
+          href="https://drive.google.com/file/d/1VWrzdsY2CRevi-BG8MANevAIIVLsVY38/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -64,4 +63,4 @@ const ExpenseElixirProjectContent = () => {
   );
 };
 
-export default ExpenseElixirProjectContent;
+export default Covid19ManagerProjectContent;

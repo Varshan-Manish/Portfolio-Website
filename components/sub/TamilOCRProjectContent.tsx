@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const ExpenseElixirProjectContent = () => {
+const TamilOCRProjectContent = () => {
   return (
     <motion.section
       className="relative z-[10] flex flex-col justify-center items-center px-6 pt-[10rem] pb-20 text-white text-center"
@@ -12,39 +12,45 @@ const ExpenseElixirProjectContent = () => {
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
-          Expense Elixir – Smart Budgeting App
+          Tamil Handwritten OCR using Deep Learning
         </span>
       </h1>
+
       <ul className="max-w-3xl text-left text-gray-300 text-lg mb-10 list-disc list-inside space-y-4">
         <li>
-          Created a full-stack expense tracking app that helps users categorize,
-          track, and analyze their daily spending habits.
+          Built a deep CNN-based Optical Character Recognition (OCR) model to
+          classify 156 handwritten Tamil characters from vowels, consonants, and
+          compounds.
         </li>
         <li>
-          Built the frontend using React and Tailwind CSS with a clean,
-          mobile-first design and responsive charts.
+          Used the IWFHR 2006 dataset and preprocessed all images with grayscale
+          conversion, inversion, thickening, and centering on a 64×64 canvas.
         </li>
         <li>
-          Developed a Node.js + Express backend with JWT-based authentication,
-          managing users and transactions securely.
+          Designed a multi-layer CNN with batch normalization, ReLU activations,
+          and dropout for robust feature extraction and classification.
         </li>
         <li>
-          Used MongoDB to store user data, transaction history, and
-          budget-related insights with high scalability.
+          Achieved test accuracy of <strong>89.83%</strong>, with training and
+          validation accuracies of 93.54% and 92.04% respectively.
         </li>
         <li>
-          Integrated monthly summaries and pie/bar visualizations for expense
-          breakdown using Chart.js.
+          Evaluated performance using confusion matrix and class-wise accuracy
+          to identify misclassifications, especially among compound characters.
         </li>
         <li>
-          Learned modular API development, user session management, and secure
-          full-stack integration with React.
+          Implemented using PyTorch, Torchvision, PIL, NumPy, and trained on
+          Google Colab with extensive visualizations of loss/accuracy trends.
+        </li>
+        <li>
+          Proposed future improvements including attention-based models,
+          multilingual OCR, and real-time deployment on mobile/edge devices.
         </li>
       </ul>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-md">
         <a
-          href="https://github.com/Varshan-Manish/ExpenseElixir"
+          href="https://github.com/Varshan-Manish/NLP_J_COMPONENT_REPOSITORY"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -52,7 +58,7 @@ const ExpenseElixirProjectContent = () => {
           GitHub
         </a>
         <a
-          href="https://drive.google.com/file/d/12mSvoZ7K1zFKgMABG8W1KbUEo07JVSjY/view?usp=sharing"
+          href="https://drive.google.com/file/d/19C571MUlTupCjH-F6dy4PdvwcUV3Ja38/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -64,4 +70,4 @@ const ExpenseElixirProjectContent = () => {
   );
 };
 
-export default ExpenseElixirProjectContent;
+export default TamilOCRProjectContent;

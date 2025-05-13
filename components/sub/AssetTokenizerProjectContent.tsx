@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const ExpenseElixirProjectContent = () => {
+const AssetTokenizerProjectContent = () => {
   return (
     <motion.section
       className="relative z-[10] flex flex-col justify-center items-center px-6 pt-[10rem] pb-20 text-white text-center"
@@ -12,39 +12,44 @@ const ExpenseElixirProjectContent = () => {
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
-          Expense Elixir – Smart Budgeting App
+          Real Estate Asset Tokenizer - Using Blockchain
         </span>
       </h1>
+
       <ul className="max-w-3xl text-left text-gray-300 text-lg mb-10 list-disc list-inside space-y-4">
         <li>
-          Created a full-stack expense tracking app that helps users categorize,
-          track, and analyze their daily spending habits.
+          Developed a blockchain-based tokenization platform for real estate
+          assets, leveraging Ethereum smart contracts.
         </li>
         <li>
-          Built the frontend using React and Tailwind CSS with a clean,
-          mobile-first design and responsive charts.
+          Built a secure decentralized app (DApp) for users to invest in
+          fractionalized ownership of real estate properties.
         </li>
         <li>
-          Developed a Node.js + Express backend with JWT-based authentication,
-          managing users and transactions securely.
+          Integrated asset management, including creation, modification, and
+          deletion of properties on the blockchain.
         </li>
         <li>
-          Used MongoDB to store user data, transaction history, and
-          budget-related insights with high scalability.
+          Enabled seamless investment opportunities by minting ERC-1155 tokens
+          representing ownership shares of real estate assets.
         </li>
         <li>
-          Integrated monthly summaries and pie/bar visualizations for expense
-          breakdown using Chart.js.
+          Implemented authentication with MetaMask for wallet-based user login
+          and token transactions.
         </li>
         <li>
-          Learned modular API development, user session management, and secure
-          full-stack integration with React.
+          Wrote Solidity smart contracts for property tokenization and ownership
+          tracking, ensuring compliance with token standards.
+        </li>
+        <li>
+          Utilized MongoDB for backend data storage, tracking token ownership
+          and asset availability in real time.
         </li>
       </ul>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-md">
         <a
-          href="https://github.com/Varshan-Manish/ExpenseElixir"
+          href="https://github.com/Varshan-Manish/Real-Estate-Asset-Tokenizer-Blockchain"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -52,7 +57,7 @@ const ExpenseElixirProjectContent = () => {
           GitHub
         </a>
         <a
-          href="https://drive.google.com/file/d/12mSvoZ7K1zFKgMABG8W1KbUEo07JVSjY/view?usp=sharing"
+          href="https://drive.google.com/file/d/1TDbGVC2I1jmyKkiD72swBOkKGAAEJDBF/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -64,4 +69,4 @@ const ExpenseElixirProjectContent = () => {
   );
 };
 
-export default ExpenseElixirProjectContent;
+export default AssetTokenizerProjectContent;

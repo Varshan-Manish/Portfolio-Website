@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const ExpenseElixirProjectContent = () => {
+const DeepfakeDetectionProjectContent = () => {
   return (
     <motion.section
       className="relative z-[10] flex flex-col justify-center items-center px-6 pt-[10rem] pb-20 text-white text-center"
@@ -12,39 +12,44 @@ const ExpenseElixirProjectContent = () => {
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
-          Expense Elixir – Smart Budgeting App
+          Deepfake Detection Using Deep Learning Techniques
         </span>
       </h1>
+
       <ul className="max-w-3xl text-left text-gray-300 text-lg mb-10 list-disc list-inside space-y-4">
         <li>
-          Created a full-stack expense tracking app that helps users categorize,
-          track, and analyze their daily spending habits.
+          Built a hybrid CNN-LSTM model combining ResNeXt-50 for spatial feature
+          extraction and LSTM for temporal video frame analysis.
         </li>
         <li>
-          Built the frontend using React and Tailwind CSS with a clean,
-          mobile-first design and responsive charts.
+          Trained on curated datasets of deepfake and real videos with
+          pre-cropped faces from Kaggle and FaceForensics++.
         </li>
         <li>
-          Developed a Node.js + Express backend with JWT-based authentication,
-          managing users and transactions securely.
+          Achieved 88.46% accuracy, 91.35% precision, and 87.46% F1 score for
+          real vs fake classification.
         </li>
         <li>
-          Used MongoDB to store user data, transaction history, and
-          budget-related insights with high scalability.
+          Designed the system to process video sequences, extract key frames,
+          and classify them using learned spatio-temporal features.
         </li>
         <li>
-          Integrated monthly summaries and pie/bar visualizations for expense
-          breakdown using Chart.js.
+          Visualized training metrics and confusion matrix with Matplotlib and
+          Seaborn for performance evaluation.
         </li>
         <li>
-          Learned modular API development, user session management, and secure
-          full-stack integration with React.
+          Implemented on Google Colab using PyTorch, OpenCV, face_recognition,
+          and custom dataset handling with DataLoader.
+        </li>
+        <li>
+          Proposed future improvements including Transformer-based models, audio
+          integration, and edge-device deployment.
         </li>
       </ul>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-md">
         <a
-          href="https://github.com/Varshan-Manish/ExpenseElixir"
+          href="https://github.com/Varshan-Manish/Deepfake-Detector-Using-CNN-and-LSTM"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -52,7 +57,7 @@ const ExpenseElixirProjectContent = () => {
           GitHub
         </a>
         <a
-          href="https://drive.google.com/file/d/12mSvoZ7K1zFKgMABG8W1KbUEo07JVSjY/view?usp=sharing"
+          href="https://drive.google.com/file/d/1_I-v_Kw5Q-EruItzJ_mVeoMqlhDHWJ3x/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full text-center px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 rounded-lg hover:opacity-90 transition font-medium"
@@ -64,4 +69,4 @@ const ExpenseElixirProjectContent = () => {
   );
 };
 
-export default ExpenseElixirProjectContent;
+export default DeepfakeDetectionProjectContent;
