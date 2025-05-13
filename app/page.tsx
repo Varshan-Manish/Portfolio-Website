@@ -1,4 +1,3 @@
-"use client";
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import dynamic from "next/dynamic";
@@ -7,8 +6,6 @@ const Projects = dynamic(() => import("@/components/main/Projects"), {
   ssr: false,
 });
 import Skills from "@/components/main/Skills";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import Image from "next/image";
 
