@@ -1,14 +1,14 @@
-import Encryption from "@/components/main/Encryption";
-import Hero from "@/components/main/Hero";
 import dynamic from "next/dynamic";
-
 const Projects = dynamic(() => import("@/components/main/Projects"), {
   ssr: false,
 });
+const Hero = dynamic(() => import("@/components/main/Hero"), {
+  ssr: false,
+});
+const Encryption = dynamic(() => import("@/components/main/Encryption"), {
+  ssr: false,
+});
 import Skills from "@/components/main/Skills";
-
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main className="h-full w-full">
