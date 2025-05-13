@@ -4,12 +4,12 @@ const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
 
 const Hero = () => {
   return (
-    <div className="relative flex flex-col h-full w-full">
+    <div className="relative flex flex-col min-h-[600px] md:min-h-screen w-full overflow-hidden">
       <video
         autoPlay
         muted
         loop
-        className="rotate-180 absolute top-[-280px]  h-full w-full left-0 z-[20] object-cover "
+        className="rotate-180 absolute top-[-240px] md:top-[-325px]  h-full w-full left-0 z-[20] object-cover "
       >
         <source src="/blackhole.webm" type="video/webm" />
       </video>

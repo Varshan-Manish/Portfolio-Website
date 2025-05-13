@@ -5,7 +5,7 @@ const Projects = dynamic(() => import("@/components/main/Projects"), {
 const Hero = dynamic(() => import("@/components/main/Hero"), {
   ssr: false,
 });
-const Encryption = dynamic(() => import("@/components/main/Encryption"), {
+const AboutMe = dynamic(() => import("@/components/main/AboutMe"), {
   ssr: false,
 });
 const Skills = dynamic(() => import("@/components/main/Skills"), {
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills />
-        <Encryption />
+        <AboutMe />
         <Projects />
       </div>
     </main>
