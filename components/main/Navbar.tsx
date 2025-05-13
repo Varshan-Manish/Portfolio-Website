@@ -1,6 +1,7 @@
 "use client";
 import { Socials } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -14,15 +15,19 @@ const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10 z-[30]">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        {/* Logo + Name (hidden on mobile) */}
-        <a href="/" className="h-auto w-auto flex flex-row items-center">
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Varshan Manish&apos;s Portfolio
-          </span>
-        </a>
+        {/* Logo Image */}
+        <Link href="/" className="h-auto w-auto hidden md:flex items-center">
+          <Image
+            src="/logo1.png" // ✅ Replace with your actual logo path
+            alt="Varshan Logo"
+            width={220}
+            height={40}
+            className="rounded-md"
+          />
+        </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
+        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20 ml-auto">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="/#about-me" className="cursor-pointer">
               About me
@@ -36,8 +41,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Social Icons (always visible) */}
-        <div className="flex flex-row gap-5">
+        {/* Social Icons + Hamburger */}
+        <div className="flex flex-row gap-5 ml-auto">
           {Socials.map((social) => (
             <a
               key={social.name}
@@ -55,7 +60,7 @@ const Navbar = () => {
             </a>
           ))}
 
-          {/* Hamburger Menu (mobile only) */}
+          {/* Hamburger Menu */}
           <div className="md:hidden flex items-center ml-2">
             {menuOpen ? (
               <FiX

@@ -85,7 +85,7 @@ const AboutMe = () => {
           </Link>
           {/* Link to the /ComingSoon route */}
           <Link
-            href="/ComingSoon"
+            href="/MoreAboutMe"
             className="inline-block mt-6 bg-gradient-to-r from-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform duration-300 z-[30]"
           >
             Learn more about me

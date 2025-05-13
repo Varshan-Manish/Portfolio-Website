@@ -90,7 +90,7 @@ const HeroContent = () => {
           className="flex md:block justify-center md:justify-start mt-6"
         >
           <Link
-            href="/ComingSoon"
+            href="/MoreAboutMe"
             className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] w-full md:w-auto text-lg"
           >
             Learn More
