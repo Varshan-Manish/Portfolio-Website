@@ -15,7 +15,7 @@ const MoreAboutMe = () => {
             autoPlay
             muted
             loop
-            className="rotate-180 absolute top-[-320px] md:top-[-250px] h-[80vh] w-full left-0 z-[20] object-cover"
+            className="rotate-180 absolute top-[-320px] md:top-[-250px] h-[80vh] w-full left-0 object-cover"
           >
             <source src="/blackhole.webm" type="video/webm" />
           </video>
