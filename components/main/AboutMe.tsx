@@ -19,9 +19,9 @@ const AboutMe = () => {
         animate="visible"
         className="text-[40px] font-bold text-center text-gray-200 mb-10 z-[25]"
       >
-        About{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-yellow-400">
-          Me
+        {" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-400">
+          About Me
         </span>
       </motion.h1>
 
@@ -63,15 +63,17 @@ const AboutMe = () => {
         >
           <h2 className="text-3xl font-bold text-white">Varshan Manish</h2>
           <p className="text-lg italic text-gray-400">
-            M.Tech (Integrated) in Computer Science Engineering, VIT
+            M.Tech (Integrated) in Computer Science Engineering, VIT Vellore
           </p>
           <p className="text-lg leading-relaxed mt-4">
-            I am a 3rd year student at Vellore Institute of Technology, Vellore
-            (VIT University). I have been working tirelessly to upskill myself
-            in the said domains. I am also learning more and more about the
-            world of artificial intelligence, machine learning, and deep
-            learning. I am currently looking for internships revolving around my
-            domain of expertise.
+            I have been working tirelessely to learn more skills. I am very much
+            interested in the field of artificial intelligence machine and deep
+            learning. I am striving hard to learn more technologies related to
+            AI and ML. I am also working hard to learn any new technologies and
+            frameworks that spring up in the domain of full stack development
+            and blockchain as they are under a rapid evolution phase. My goal is
+            to add more and more icons in the skill section above until my last
+            breath.
           </p>
           <Link
             href="https://drive.google.com/file/d/1JsgSIvq4txbu3yy-SSu55qRMe65bP_PA/view?usp=sharing"
@@ -86,7 +88,7 @@ const AboutMe = () => {
             href="/ComingSoon"
             className="inline-block mt-6 bg-gradient-to-r from-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform duration-300 z-[30]"
           >
-            Learn More about me
+            Learn more about me
           </Link>
         </motion.div>
       </div>

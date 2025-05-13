@@ -24,13 +24,13 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a href="#about-me" className="cursor-pointer">
+            <a href="/#about-me" className="cursor-pointer">
               About me
             </a>
-            <a href="#skills" className="cursor-pointer">
+            <a href="/#skills" className="cursor-pointer">
               Skills
             </a>
-            <a href="#projects" className="cursor-pointer">
+            <a href="/#projects" className="cursor-pointer">
               Projects
             </a>
           </div>

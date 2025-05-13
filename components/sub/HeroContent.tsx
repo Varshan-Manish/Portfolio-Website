@@ -10,7 +10,7 @@ import Link from "next/link";
 // Lottie animation data array
 const lottieAnimations = [
   {
-    animationData: require("/public/Animation-1747032549080.json"),
+    animationData: require("/public/Animation-1747129850124.json"),
     label: "Full Stack Web Development",
   },
   {
