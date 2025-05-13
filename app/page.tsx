@@ -8,7 +8,9 @@ const Hero = dynamic(() => import("@/components/main/Hero"), {
 const Encryption = dynamic(() => import("@/components/main/Encryption"), {
   ssr: false,
 });
-import Skills from "@/components/main/Skills";
+const Skills = dynamic(() => import("@/components/main/Skills"), {
+  ssr: false,
+});
 export default function Home() {
   return (
     <main className="h-full w-full">
