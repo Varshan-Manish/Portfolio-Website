@@ -1,5 +1,4 @@
 "use client";
-import Reaclt from "react";
 import dynamic from "next/dynamic";
 const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
 
