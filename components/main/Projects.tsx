@@ -6,10 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import ProjectCard from "../sub/ProjectCard";
 import type { Swiper as SwiperType } from "swiper";
-
 const Projects = () => {
   const swiperRef = useRef<SwiperType | null>(null);
-
   const projects = [
     {
       src: "/projects/ExpenseElixir/expenseElixir.png",
@@ -42,7 +40,6 @@ const Projects = () => {
       link: "/TamilOCRProject/",
     },
   ];
-
   return (
     <div
       className="flex flex-col items-center justify-center py-16 px-4 md:px-8 z-[20]"
@@ -51,7 +48,6 @@ const Projects = () => {
       <h1 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-8">
         My Projects
       </h1>
-
       <Swiper
         loop={true}
         navigation={true}
@@ -102,5 +98,4 @@ const Projects = () => {
     </div>
   );
 };
-
 export default Projects;

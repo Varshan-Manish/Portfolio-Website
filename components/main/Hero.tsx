@@ -1,7 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
 const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
-
 const Hero = () => {
   return (
     <div className="relative flex flex-col min-h-[600px] md:min-h-screen w-full overflow-hidden">
@@ -19,5 +18,4 @@ const Hero = () => {
     </div>
   );
 };
-
 export default Hero;

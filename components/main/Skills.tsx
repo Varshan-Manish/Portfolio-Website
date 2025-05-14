@@ -1,4 +1,3 @@
-// Skills.tsx
 "use client";
 import {
   Blockchain_Skill,
@@ -12,14 +11,12 @@ import {
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
-
 const Skills = () => {
   return (
     <section
       id="skills"
       className="relative flex flex-col items-center justify-center gap-6 h-full overflow-hidden pb-40 py-20"
     >
-      {/* Video Background */}
       <div className="absolute inset-0 -z-10 opacity-30 pointer-events-none">
         <video
           className="w-full h-full object-cover"
@@ -31,12 +28,8 @@ const Skills = () => {
           src="/cards-video.webm"
         />
       </div>
-
-      {/* Content */}
       <div className="relative z-[25] scale-90 w-full select-text">
         <SkillText />
-
-        {/* Skill Categories */}
         <div className="flex flex-col w-full space-y-6">
           {[
             { title: "Programming Languages", data: Programming_languages },
@@ -73,5 +66,4 @@ const Skills = () => {
     </section>
   );
 };
-
 export default Skills;

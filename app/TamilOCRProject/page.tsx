@@ -1,11 +1,9 @@
 "use client";
-
 import dynamic from "next/dynamic";
 const ProjectsContent = dynamic(
   () => import("../../components/sub/TamilOCRProjectContent"),
   { ssr: false }
 );
-
 const ProjectsPage = () => {
   return (
     <div className="relative flex flex-col min-h-[600px] md:min-h-screen w-full overflow-hidden">
@@ -23,5 +21,4 @@ const ProjectsPage = () => {
     </div>
   );
 };
-
 export default ProjectsPage;

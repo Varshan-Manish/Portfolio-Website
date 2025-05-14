@@ -1,16 +1,13 @@
 "use client";
-
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-
 interface Props {
   src: string;
   title: string;
   description: string;
   link: string;
 }
-
 const ProjectCard = ({ src, title, description, link }: Props) => {
   return (
     <div
@@ -18,7 +15,6 @@ const ProjectCard = ({ src, title, description, link }: Props) => {
       rounded-xl shadow-2xl overflow-hidden w-full sm:w-[340px] 
       flex flex-col justify-between"
     >
-      {/* Image with 16:9 aspect ratio */}
       <div className="relative w-full pb-[56.25%]">
         <Image
           src={src}
@@ -28,8 +24,6 @@ const ProjectCard = ({ src, title, description, link }: Props) => {
           className="absolute inset-0 rounded-t-xl"
         />
       </div>
-
-      {/* Content */}
       <div className="p-4 flex flex-col gap-4 h-full">
         <div>
           <h1 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500">
@@ -51,5 +45,4 @@ const ProjectCard = ({ src, title, description, link }: Props) => {
     </div>
   );
 };
-
 export default ProjectCard;

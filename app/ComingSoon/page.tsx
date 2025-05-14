@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 const ComingSoon = () => {
   return (
     <section className="flex items-center justify-center min-h-screen bg-black text-white text-center p-6 relative overflow-hidden z-[1]">
@@ -19,5 +18,4 @@ const ComingSoon = () => {
     </section>
   );
 };
-
 export default ComingSoon;

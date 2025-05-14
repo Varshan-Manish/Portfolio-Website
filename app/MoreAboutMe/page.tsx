@@ -1,11 +1,9 @@
 "use client";
-
 import dynamic from "next/dynamic";
 const MoreAboutMeContent = dynamic(
   () => import("../../components/sub/MoreAboutMeContent"),
   { ssr: false }
 );
-
 const MoreAboutMe = () => {
   return (
     <div className="relative flex flex-col min-h-[600px] md:min-h-screen w-full overflow-hidden">
@@ -23,5 +21,4 @@ const MoreAboutMe = () => {
     </div>
   );
 };
-
 export default MoreAboutMe;

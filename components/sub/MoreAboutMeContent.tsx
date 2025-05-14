@@ -1,12 +1,9 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-// Split heading text into animated falling words
 const fallingText = (text: string) => {
   return text.split(" ").map((word, i) => (
     <motion.span
@@ -20,7 +17,6 @@ const fallingText = (text: string) => {
     </motion.span>
   ));
 };
-
 const MiniCard = ({
   heading,
   details,
@@ -35,8 +31,6 @@ const MiniCard = ({
     <p>{details}</p>
   </div>
 );
-
-// Floating card component
 const Card = ({
   title,
   content,
@@ -160,7 +154,6 @@ const Card = ({
     )}
   </Tilt>
 );
-
 const MoreAboutMeContent = () => {
   return (
     <motion.section
@@ -180,7 +173,6 @@ const MoreAboutMeContent = () => {
       >
         More About Varshan Manish
       </motion.h1>
-
       <div className="flex flex-col md:flex-row gap-12 items-center mb-20 max-w-6xl">
         <motion.div
           animate={{ y: [0, -10, 0, 10, 0] }}
@@ -205,7 +197,6 @@ const MoreAboutMeContent = () => {
             />
           </Tilt>
         </motion.div>
-
         <motion.div
           className="max-w-xl text-lg text-gray-300 leading-relaxed"
           animate={{ y: [0, 10, 0, -10, 0] }}
@@ -225,7 +216,6 @@ const MoreAboutMeContent = () => {
           )}
         </motion.div>
       </div>
-
       <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
         {[
           {
@@ -276,8 +266,6 @@ const MoreAboutMeContent = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* Button placed below all cards */}
       <Link
         href="https://drive.google.com/file/d/1JsgSIvq4txbu3yy-SSu55qRMe65bP_PA/view?usp=sharing"
         target="_blank"
@@ -289,5 +277,4 @@ const MoreAboutMeContent = () => {
     </motion.section>
   );
 };
-
 export default MoreAboutMeContent;

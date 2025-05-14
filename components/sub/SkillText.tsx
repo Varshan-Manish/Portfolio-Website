@@ -6,7 +6,6 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-
 const SkillText = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center">
@@ -19,16 +18,12 @@ const SkillText = () => {
       >
         Technical Skills
       </motion.div>
-
-      {/* Main Subtitle */}
       <motion.div
         variants={slideInFromLeft(0.5)}
         className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
       >
         Making applications with modern technologies
       </motion.div>
-
-      {/* Subtext */}
       <motion.div
         variants={slideInFromRight(0.5)}
         className="italic text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
@@ -38,5 +33,4 @@ const SkillText = () => {
     </div>
   );
 };
-
 export default SkillText;

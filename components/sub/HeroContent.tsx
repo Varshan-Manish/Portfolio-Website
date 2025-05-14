@@ -1,13 +1,10 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { Typewriter } from "react-simple-typewriter";
 import Lottie from "react-lottie";
 import Link from "next/link";
-
-// Lottie animation data array
 const lottieAnimations = [
   {
     animationData: require("/public/Animation-1747129850124.json"),
@@ -26,12 +23,9 @@ const lottieAnimations = [
     label: "Software Engineering",
   },
 ];
-
 const HeroContent = () => {
   const [currentAnimation, setCurrentAnimation] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
-
-  // Change animation every 3 seconds with fade effect
   useEffect(() => {
     const intervalId = setInterval(() => {
       setFadeIn(false);
@@ -42,17 +36,14 @@ const HeroContent = () => {
         setFadeIn(true);
       }, 500);
     }, 3000);
-
     return () => clearInterval(intervalId);
   }, []);
-
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 mt-32 md:mt-40 pt-20 md:pt-0 w-full z-[20] gap-10"
     >
-      {/* LEFT TEXT */}
       <div className="h-full w-full flex flex-col justify-center text-start">
         <motion.div
           variants={slideInFromLeft(0.5)}
@@ -83,8 +74,6 @@ const HeroContent = () => {
             </span>
           </span>
         </motion.div>
-
-        {/* Button wrapper adjusted for mobile centering */}
         <motion.div
           variants={slideInFromLeft(1)}
           className="flex md:block justify-center md:justify-start mt-6"
@@ -97,8 +86,6 @@ const HeroContent = () => {
           </Link>
         </motion.div>
       </div>
-
-      {/* RIGHT LOTTIE ANIMATIONS (Hidden on small screens) */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="hidden md:flex justify-end items-center w-[50%] h-full"
@@ -107,7 +94,6 @@ const HeroContent = () => {
           key={currentAnimation}
           className="flex flex-col items-center justify-center h-full"
         >
-          {/* Lottie with fade transition */}
           <motion.div
             className="w-full h-full flex justify-center items-center"
             initial={{ opacity: 0 }}
@@ -124,7 +110,6 @@ const HeroContent = () => {
               width={500}
             />
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,5 +124,4 @@ const HeroContent = () => {
     </motion.div>
   );
 };
-
 export default HeroContent;

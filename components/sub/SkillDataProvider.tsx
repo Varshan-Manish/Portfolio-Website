@@ -1,11 +1,8 @@
-// SkillDataProvider.tsx
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-
 interface Props {
   src: string;
   width: number;
@@ -13,7 +10,6 @@ interface Props {
   index: number;
   label: string;
 }
-
 const SkillDataProvider = ({ src, width, height, index, label }: Props) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -25,7 +21,6 @@ const SkillDataProvider = ({ src, width, height, index, label }: Props) => {
   };
 
   const animationDelay = 0.3;
-
   return (
     <motion.div
       ref={ref}
@@ -39,31 +34,27 @@ const SkillDataProvider = ({ src, width, height, index, label }: Props) => {
       }}
       className="flex flex-col items-center mx-4 my-4 select-text"
     >
-      {/* Hover effect applied only to the image */}
       <motion.div
         whileHover={{
-          scale: 1.2, // Slightly scale up the image
-          y: -5, // Raise the image on hover
-          boxShadow: "0 4px 25px rgba(255, 0, 255, 0.6)", // Glow effect on hover
+          scale: 1.2,
+          y: -5,
+          boxShadow: "0 4px 25px rgba(255, 0, 255, 0.6)",
         }}
         transition={{ type: "spring", stiffness: 300 }}
-        className="cursor-pointer inline-block" // Removed any background styling here
+        className="cursor-pointer inline-block"
       >
         <Image
           src={src}
           width={width}
           height={height}
           alt={`${label} icon`}
-          className="object-contain pointer-events-auto" // The image itself is unaffected by layout shifts
+          className="object-contain pointer-events-auto"
         />
       </motion.div>
-
-      {/* Label text */}
       <span className="mt-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 text-center">
         {label}
       </span>
     </motion.div>
   );
 };
-
 export default SkillDataProvider;

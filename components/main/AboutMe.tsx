@@ -5,14 +5,12 @@ import Tilt from "react-parallax-tilt";
 import Image from "next/image";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
-
 const AboutMe = () => {
   return (
     <section
       id="about-me"
       className="flex flex-col items-center justify-center min-h-screen w-full px-6 py-10 relative bg-black"
     >
-      {/* Heading */}
       <motion.h1
         variants={slideInFromLeft(0.3)}
         initial="hidden"
@@ -24,14 +22,11 @@ const AboutMe = () => {
           About Me
         </span>
       </motion.h1>
-
-      {/* Content */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-10 z-[25] relative">
-        {/* Profile Image with fly-in and interactive tilt */}
         <motion.div
-          initial={{ x: -500, opacity: 0 }} // Start position: off-screen to the left
-          animate={{ x: 0, opacity: 1 }} // End position: on-screen
-          transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
+          initial={{ x: -500, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="z-[25]"
         >
           <Tilt
@@ -53,8 +48,6 @@ const AboutMe = () => {
             />
           </Tilt>
         </motion.div>
-
-        {/* Text + Button */}
         <motion.div
           variants={slideInFromRight(0.5)}
           initial="hidden"
@@ -83,7 +76,6 @@ const AboutMe = () => {
           >
             Download Resume
           </Link>
-          {/* Link to the /ComingSoon route */}
           <Link
             href="/MoreAboutMe"
             className="inline-block mt-6 bg-gradient-to-r from-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform duration-300 z-[30]"
@@ -95,5 +87,4 @@ const AboutMe = () => {
     </section>
   );
 };
-
 export default AboutMe;

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { RxGithubLogo } from "react-icons/rx";
-
 const Footer = () => {
   return (
     <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] z-[30]">
@@ -36,7 +35,6 @@ const Footer = () => {
             </p>
           </div>
         </div>
-
         <div className="mt-6 text-[15px] text-center">
           &copy; Created By Varshan Manish 2025. All Rights Reserved.
         </div>
@@ -44,5 +42,4 @@ const Footer = () => {
     </div>
   );
 };
-
 export default Footer;
