@@ -3,14 +3,13 @@ import React from "react";
 
 const ComingSoon = () => {
   return (
-    <section className="flex items-center justify-center min-h-screen bg-black text-white text-center p-6 relative overflow-hidden">
+    <section className="flex items-center justify-center min-h-screen bg-black text-white text-center p-6 relative overflow-hidden z-[1]">
       <video
         autoPlay
         muted
         loop
-        className="rotate-180 absolute top-[-260px] md:top-[-250px] h-[80vh] w-full left-0 object-cover"
+        className="rotate-180 absolute top-[-240px] md:top-[-325px] h-full w-full left-0 z-[10] object-cover"
       >
-        <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
       </video>
       <div className="z-[30]">
