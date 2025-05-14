@@ -9,6 +9,7 @@ const Hero = () => {
         autoPlay
         muted
         loop
+        playsInline
         className="rotate-180 absolute top-[-260px] md:top-[-250px] h-[80vh] w-full left-0 object-cover"
       >
         <source src="/blackhole.mp4" type="video/mp4" />
