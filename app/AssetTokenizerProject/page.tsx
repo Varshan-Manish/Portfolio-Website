@@ -20,6 +20,7 @@ const ProjectsPage = () => {
       } else {
         offset = -250;
       }
+      alert(offset);
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
       }
