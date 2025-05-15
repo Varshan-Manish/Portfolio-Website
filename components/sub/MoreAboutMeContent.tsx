@@ -165,6 +165,9 @@ const MoreAboutMeContent = () => {
         ease: "easeInOut",
       }}
     >
+      <br />
+      <br />
+      <br />
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
