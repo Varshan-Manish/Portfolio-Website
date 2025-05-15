@@ -32,7 +32,7 @@ const Hero = () => {
       } else {
         offset = -250;
       }
-
+      alert(`Width: ${width} Offset: ${offset} Height: ${window.innerHeight}`);
       if (videoRef.current) {
         requestAnimationFrame(() => {
           if (videoRef.current) {
