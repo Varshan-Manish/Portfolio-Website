@@ -16,7 +16,7 @@ const Hero = () => {
 
       if (width >= 768 && height < 700) {
         // 🧠 Mobile in desktop mode
-        offset = -320;
+        offset = -420;
       } else if (width < 768) {
         // 📱 Real mobile
         offset = -260;
