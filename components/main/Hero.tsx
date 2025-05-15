@@ -14,15 +14,15 @@ const Hero = () => {
 
       let offset;
 
-      if (width >= 768 && height < 700) {
-        offset = -420;
+      if (width >= 768 && width <= 1100) {
+        offset = -420; // Mobile desktop mode
       } else if (width < 768) {
-        offset = -260;
+        offset = -260; // Real mobile
       } else {
-        offset = -250;
+        offset = -250; // Desktop/laptop
       }
 
-      alert(`Width: ${width}, Height: ${height}, Offset: ${offset}`);
+      console.log(`Width: ${width}, Height: ${height}, Offset: ${offset}`);
 
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
