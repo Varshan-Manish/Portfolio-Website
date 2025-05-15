@@ -88,7 +88,7 @@ const HeroContent = () => {
       </div>
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="hidden md:flex justify-end items-center w-[50%] h-full"
+        className="hidden lg:flex justify-end items-center w-[50%] h-full"
       >
         <div
           key={currentAnimation}
