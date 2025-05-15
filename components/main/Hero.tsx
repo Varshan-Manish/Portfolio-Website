@@ -11,8 +11,6 @@ const Hero = () => {
   useEffect(() => {
     const updateLayout = () => {
       const width = window.innerWidth;
-
-      // Determine offset
       let offset;
       if (width < 768) {
         offset = -260;
@@ -20,12 +18,12 @@ const Hero = () => {
         offset = -400;
       } else if (width > 1024 && width <= 1100) {
         offset = -750;
-        setIsMobileDesktopMode(true); // <-- This is your special case
+        setIsMobileDesktopMode(true);
       } else {
         offset = -250;
         setIsMobileDesktopMode(false);
       }
-
+      alert(`Width: ${width} Offset: ${offset} Height: ${window.innerHeight}`);
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
       }
