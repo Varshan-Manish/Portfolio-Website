@@ -22,7 +22,7 @@ const Hero = () => {
         offset = -250; // Desktop/laptop
       }
 
-      console.log(`Width: ${width}, Height: ${height}, Offset: ${offset}`);
+      alert(`Width: ${width}, Height: ${height}, Offset: ${offset}`);
 
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
