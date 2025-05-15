@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { isMobile } from "react-device-detect";
 
 const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
 
@@ -9,24 +8,31 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobileDesktopMode, setIsMobileDesktopMode] = useState(false);
 
+  // Detect if user agent is Android or iOS mobile device
+  const isMobileOS = () => {
+    if (typeof navigator === "undefined") return false;
+    const ua = navigator.userAgent || navigator.vendor || "";
+    return /android/i.test(ua) || /iphone|ipad|ipod/i.test(ua);
+  };
+
   useEffect(() => {
     const updateLayout = () => {
       const width = window.innerWidth;
-      let offset: number;
+      let offset = -250; // default offset
       let mobileDesktopMode = false;
 
-      if (isMobile && width >= 768) {
-        // Mobile device but desktop-sized viewport (landscape or tablet)
+      if (isMobileOS() && width >= 768) {
+        // Mobile device in desktop/tablet width mode
         offset = -750;
         mobileDesktopMode = true;
-      } else if (width < 768) {
+      } else if (isMobileOS() && width < 768) {
         offset = -260;
-      } else if (width >= 768 && width <= 1024) {
+      } else if (!isMobileOS() && width >= 768 && width <= 1024) {
         offset = -400;
       } else {
         offset = -250;
       }
-      alert(`Width: ${width} Offset: ${offset} Height: ${window.innerHeight}`);
+
       if (videoRef.current) {
         requestAnimationFrame(() => {
           if (videoRef.current) {
@@ -34,21 +40,16 @@ const Hero = () => {
           }
         });
       }
-
       setIsMobileDesktopMode(mobileDesktopMode);
     };
-
     updateLayout();
-
     window.addEventListener("resize", updateLayout);
     window.addEventListener("orientationchange", updateLayout);
-
     return () => {
       window.removeEventListener("resize", updateLayout);
       window.removeEventListener("orientationchange", updateLayout);
     };
   }, []);
-
   return (
     <div className="relative flex flex-col min-h-[600px] md:min-h-screen w-full overflow-hidden">
       <video
@@ -63,7 +64,6 @@ const Hero = () => {
         <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
       </video>
-
       {isMobileDesktopMode && (
         <>
           <br />
@@ -74,10 +74,8 @@ const Hero = () => {
           <br />
         </>
       )}
-
       <HeroContent />
     </div>
   );
 };
-
 export default Hero;
