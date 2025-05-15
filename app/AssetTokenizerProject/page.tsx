@@ -20,7 +20,7 @@ const ProjectsPage = () => {
       } else {
         offset = -250;
       }
-      alert(offset);
+      alert(`Width: ${width} Offset: ${offset} Height: ${window.innerHeight}`);
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
       }
