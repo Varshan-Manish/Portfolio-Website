@@ -3,11 +3,14 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "../styles/swiperFix.css";
 import { Autoplay, Navigation } from "swiper/modules";
 import ProjectCard from "../sub/ProjectCard";
 import type { Swiper as SwiperType } from "swiper";
+
 const Projects = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+
   const projects = [
     {
       src: "/projects/ExpenseElixir/expenseElixir.png",
@@ -18,7 +21,7 @@ const Projects = () => {
     {
       src: "/projects/AssetTokenizer/AssetTokenizer.jpg",
       title: "Asset Tokenizer",
-      desc: "Tokenize real estate assets using Ethereum blockchain for enhanced investment oportunities.",
+      desc: "Tokenize real estate assets using Ethereum blockchain for enhanced investment opportunities.",
       link: "/AssetTokenizerProject/",
     },
     {
@@ -40,14 +43,16 @@ const Projects = () => {
       link: "/TamilOCRProject/",
     },
   ];
+
   return (
     <div
-      className="flex flex-col items-center justify-center py-16 px-4 md:px-8 z-[20]"
+      className="flex flex-col items-center justify-centerpy-16 px-4 md:px-8 z-[20]"
       id="projects"
     >
       <h1 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-8">
         My Projects
       </h1>
+
       <Swiper
         loop={true}
         navigation={true}
@@ -71,26 +76,28 @@ const Projects = () => {
             slidesPerView: 2,
             spaceBetween: 25,
           },
-          1024: {
+          1025: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
         }}
         modules={[Navigation, Autoplay]}
-        className="w-full max-w-[1200px]"
+        className="w-full max-w-[1400px] relative px-4 sm:px-6 md:px-8"
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div
-              onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
-              onMouseLeave={() => swiperRef.current?.autoplay?.start()}
-            >
-              <ProjectCard
-                src={project.src}
-                title={project.title}
-                description={project.desc}
-                link={project.link}
-              />
+            <div className="flex justify-center">
+              <div
+                onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+                onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+              >
+                <ProjectCard
+                  src={project.src}
+                  title={project.title}
+                  description={project.desc}
+                  link={project.link}
+                />
+              </div>
             </div>
           </SwiperSlide>
         ))}

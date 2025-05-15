@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "../styles/swiperFix.css";
+import "../styles/Floater.css";
 const images = [
   "/projects/Covid19Manager/Covid19Manager.JPG",
   "/projects/Covid19Manager/Covid19Manager1.png",
@@ -30,9 +32,9 @@ const Covid19ManagerProjectContent = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
           Covid-19 Manager And Tracker API - With Google App Engine
@@ -80,33 +82,40 @@ const Covid19ManagerProjectContent = () => {
           Documentation
         </a>
       </div>
-      <div className="w-full max-w-5xl">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation
-          loop={true}
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
-          spaceBetween={20}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="w-full"
-        >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Covid Image ${index + 1}`}
-                onClick={() => setFullscreenImage(src)}
-                className="w-full h-64 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8">
+        <span className="bg-gradient-to-r from-purple-500 to-cyan-300 text-transparent bg-clip-text">
+          Gallery
+        </span>
+      </h2>
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation
+        loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        spaceBetween={20}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1025: { slidesPerView: 3 },
+        }}
+        className="w-full max-w-[1400px] relative px-4 sm:px-6 md:px-8"
+      >
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex justify-center">
+              <div className="bg-black border-2 border-black rounded-xl p-2 w-[85%] h-72 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-purple-500 hover:border-purple-500">
+                <img
+                  src={src}
+                  alt={`Covid-19 Manager Image ${index + 1}`}
+                  onClick={() => setFullscreenImage(src)}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       {fullscreenImage && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex justify-center items-center p-4 overflow-auto">
           <div className="relative flex justify-center items-center max-w-[90vw] max-h-[90vh]">
@@ -125,51 +134,6 @@ const Covid19ManagerProjectContent = () => {
           </div>
         </div>
       )}
-      <style jsx>{`
-        .swiper-button-prev,
-        .swiper-button-next {
-          color: white;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-        }
-        .swiper-button-prev {
-          left: -20px;
-        }
-        .swiper-button-next {
-          right: -20px;
-        }
-        @media (max-width: 768px) {
-          .swiper-button-prev,
-          .swiper-button-next {
-            width: 30px;
-            height: 30px;
-          }
-          .swiper-button-prev {
-            left: -10px;
-          }
-          .swiper-button-next {
-            right: -10px;
-          }
-        }
-      `}</style>
-      <style jsx global>{`
-        @keyframes floatY {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-        .animate-floating {
-          animation: floatY 6s ease-in-out infinite;
-        }
-      `}</style>
     </motion.section>
   );
 };

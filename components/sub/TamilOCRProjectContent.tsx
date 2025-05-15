@@ -1,12 +1,12 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import "../styles/swiperFix.css";
+import "../styles/Floater.css";
 const images = [
   "/projects/TamilOCR/TamilOCR.png",
   "/projects/TamilOCR/TamilOCR1.JPG",
@@ -17,16 +17,13 @@ const images = [
   "/projects/TamilOCR/TamilOCR6.JPG",
   "/projects/TamilOCR/TamilOCR7.png",
 ];
-
-const DeepfakeDetectionProjectContent = () => {
+const TamilOCRProjectContent = () => {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-
   useEffect(() => {
     if (fullscreenImage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [fullscreenImage]);
-
   return (
     <motion.section
       className="relative z-[10] flex flex-col justify-center items-center px-6 pt-[10rem] pb-20 text-white text-center animate-floating"
@@ -34,46 +31,44 @@ const DeepfakeDetectionProjectContent = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 overflow-visible">
         <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text">
-          Deepfake Detection Using Deep Learning Techniques
+          Tamil Optical Handwritten Character Recognition
         </span>
       </h1>
-
       <ul className="max-w-3xl text-left text-gray-300 text-lg mb-10 list-disc list-inside space-y-4">
         <li>
-          Built a hybrid CNN-LSTM model combining ResNeXt-50 for spatial feature
-          extraction and LSTM for temporal video frame analysis.
+          Built a CNN-based deep learning model using PyTorch to recognize
+          handwritten Tamil characters from scanned image datasets.
         </li>
         <li>
-          Trained on curated datasets of deepfake and real videos with
-          pre-cropped faces from Kaggle and FaceForensics++.
+          Used a cleaned version of the HP Labs handwritten Tamil character
+          dataset containing 156 classes and 32×32 grayscale images.
         </li>
         <li>
-          Achieved 88.46% accuracy, 91.35% precision, and 87.46% F1 score for
-          real vs fake classification.
+          Applied preprocessing steps including normalization, grayscale
+          verification, and label encoding for 156 unique Tamil characters.
         </li>
         <li>
-          Designed the system to process video sequences, extract key frames,
-          and classify them using learned spatio-temporal features.
+          Designed a 3-layer CNN model (Conv2D-ReLU-MaxPool + Linear layers)
+          with batch normalization and dropout to prevent overfitting.
         </li>
         <li>
-          Visualized training metrics and confusion matrix with Matplotlib and
-          Seaborn for performance evaluation.
+          Achieved an overall classification accuracy of 92.4% on the validation
+          dataset and visualized performance with confusion matrix plots.
         </li>
         <li>
-          Implemented on Google Colab using PyTorch, OpenCV, face_recognition,
-          and custom dataset handling with DataLoader.
+          Implemented the model training and evaluation pipeline on Google Colab
+          using PyTorch, NumPy, and Matplotlib.
         </li>
         <li>
-          Proposed future improvements including Transformer-based models, audio
-          integration, and edge-device deployment.
+          Proposed future enhancements like data augmentation, OCR integration
+          with segmentation models, and Transformer-based architectures.
         </li>
       </ul>
-
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-md mb-10">
         <a
           href="https://github.com/Varshan-Manish/NLP_J_COMPONENT_REPOSITORY"
@@ -92,37 +87,43 @@ const DeepfakeDetectionProjectContent = () => {
           Documentation
         </a>
       </div>
-
-      {/* Swiper */}
-      <div className="w-full max-w-5xl mb-10">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation
-          loop={true}
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
-          spaceBetween={20}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="w-full"
-        >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Deepfake Detection Image ${index + 1}`}
-                onClick={() => setFullscreenImage(src)}
-                className="w-full h-64 object-cover rounded-xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* Fullscreen Modal */}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8">
+        <span className="bg-gradient-to-r from-purple-500 to-cyan-300 text-transparent bg-clip-text">
+          Gallery
+        </span>
+      </h2>
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation
+        loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        spaceBetween={20}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1025: { slidesPerView: 3 },
+        }}
+        className="w-full max-w-[1400px] relative px-4 sm:px-6 md:px-8"
+      >
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex justify-center">
+              <div
+                className="bg-black border-2 border-black rounded-xl p-2 w-[85%] h-72 flex items-center justify-center cursor-pointer
+                transition-all duration-300 hover:bg-purple-500 hover:border-purple-500"
+              >
+                <img
+                  src={src}
+                  alt={`Tamil OCR Image ${index + 1}`}
+                  onClick={() => setFullscreenImage(src)}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       {fullscreenImage && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex justify-center items-center p-4 overflow-auto">
           <div className="relative flex justify-center items-center max-w-[90vw] max-h-[90vh]">
@@ -141,63 +142,7 @@ const DeepfakeDetectionProjectContent = () => {
           </div>
         </div>
       )}
-
-      {/* Swiper arrow styles */}
-      <style jsx>{`
-        .swiper-button-prev,
-        .swiper-button-next {
-          color: white;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-        }
-
-        .swiper-button-prev {
-          left: -20px;
-        }
-
-        .swiper-button-next {
-          right: -20px;
-        }
-
-        @media (max-width: 768px) {
-          .swiper-button-prev,
-          .swiper-button-next {
-            width: 30px;
-            height: 30px;
-          }
-
-          .swiper-button-prev {
-            left: -10px;
-          }
-
-          .swiper-button-next {
-            right: -10px;
-          }
-        }
-      `}</style>
-
-      {/* Floating animation */}
-      <style jsx global>{`
-        @keyframes floatY {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-
-        .animate-floating {
-          animation: floatY 6s ease-in-out infinite;
-        }
-      `}</style>
     </motion.section>
   );
 };
-
-export default DeepfakeDetectionProjectContent;
+export default TamilOCRProjectContent;

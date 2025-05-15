@@ -46,6 +46,8 @@ const ProjectsPage = () => {
         <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
       </video>
+      <br></br>
+      <br></br>
       <ProjectsContent />
     </div>
   );
