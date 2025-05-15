@@ -15,15 +15,14 @@ const Hero = () => {
       let offset;
 
       if (width >= 768 && height < 700) {
-        // 🧠 Mobile in desktop mode
         offset = -420;
       } else if (width < 768) {
-        // 📱 Real mobile
         offset = -260;
       } else {
-        // 🖥️ Desktop/Laptop
         offset = -250;
       }
+
+      alert(`Width: ${width}, Height: ${height}, Offset: ${offset}`);
 
       if (videoRef.current) {
         videoRef.current.style.top = `${offset}px`;
@@ -32,7 +31,12 @@ const Hero = () => {
 
     updateVideoOffset();
     window.addEventListener("resize", updateVideoOffset);
-    return () => window.removeEventListener("resize", updateVideoOffset);
+    window.addEventListener("orientationchange", updateVideoOffset);
+
+    return () => {
+      window.removeEventListener("resize", updateVideoOffset);
+      window.removeEventListener("orientationchange", updateVideoOffset);
+    };
   }, []);
 
   return (
@@ -44,7 +48,7 @@ const Hero = () => {
         loop
         playsInline
         className="rotate-180 absolute h-[80vh] w-full left-0 object-cover"
-        style={{ top: "-320px" }} // 👈 fallback for SSR (mobile desktop default)
+        style={{ top: "-320px" }} // fallback for SSR
       >
         <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
