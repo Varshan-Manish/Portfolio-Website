@@ -12,10 +12,12 @@ const MoreAboutMe = () => {
       const height = window.innerHeight;
       const width = window.innerWidth;
       let offset;
-      if (width >= 768 && width <= 1100) {
-        offset = -750;
-      } else if (width < 768) {
+      if (width < 768) {
         offset = -260;
+      } else if (width >= 768 && width <= 1024) {
+        offset = -400;
+      } else if (width > 1024 && width <= 1100) {
+        offset = -750;
       } else {
         offset = -250;
       }
