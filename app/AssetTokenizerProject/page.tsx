@@ -20,11 +20,9 @@ const ProjectsPage = () => {
       } else {
         offset = -250;
       }
-      requestAnimationFrame(() => {
-        if (videoRef.current) {
-          videoRef.current.style.top = `${offset}px`;
-        }
-      });
+      if (videoRef.current) {
+        videoRef.current.style.top = `${offset}px`;
+      }
     };
     updateVideoOffset();
     window.addEventListener("resize", updateVideoOffset);
@@ -48,8 +46,6 @@ const ProjectsPage = () => {
         <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
       </video>
-      <br></br>
-      <br></br>
       <ProjectsContent />
     </div>
   );
