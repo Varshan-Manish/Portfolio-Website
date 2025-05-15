@@ -6,13 +6,13 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 const images = [
-  "/projects/DeepfakeDetector/DeepfakeDetector.png",
-  "/projects/DeepfakeDetector/DeepfakeDetector1.png",
-  "/projects/DeepfakeDetector/DeepfakeDetector2.png",
-  "/projects/DeepfakeDetector/DeepfakeDetector3.png",
-  "/projects/DeepfakeDetector/DeepfakeDetector4.png",
-  "/projects/DeepfakeDetector/DeepfakeDetector5.JPG",
-  "/projects/DeepfakeDetector/DeepfakeDetector6.JPG",
+  "/projects/DeepFakeDetector/DeepFakeDetector.png",
+  "/projects/DeepFakeDetector/DeepFakeDetector1.png",
+  "/projects/DeepFakeDetector/DeepFakeDetector2.png",
+  "/projects/DeepFakeDetector/DeepFakeDetector3.png",
+  "/projects/DeepFakeDetector/DeepFakeDetector4.png",
+  "/projects/DeepFakeDetector/DeepFakeDetector5.JPG",
+  "/projects/DeepFakeDetector/DeepFakeDetector6.JPG",
 ];
 const DeepfakeDetectionProjectContent = () => {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);

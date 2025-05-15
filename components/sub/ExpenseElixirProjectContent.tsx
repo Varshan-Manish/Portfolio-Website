@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "../styles/swiperFix.css";
 import "../styles/Floater.css";
 const images = [
-  "/projects/ExpenseElixir/ExpenseElixir.png",
+  "/projects/ExpenseElixir/expenseElixir.png",
   "/projects/ExpenseElixir/ExpenseElixirImage1.jpeg",
   "/projects/ExpenseElixir/ExpenseElixirImage2.jpeg",
   "/projects/ExpenseElixir/ExpenseElixirImage3.jpeg",

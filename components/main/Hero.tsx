@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import { isMobile } from "react-device-detect";
 
 const HeroContent = dynamic(() => import("../sub/HeroContent"), { ssr: false });
 
@@ -11,32 +12,37 @@ const Hero = () => {
   useEffect(() => {
     const updateLayout = () => {
       const width = window.innerWidth;
-      let offset;
-      if (width < 768) {
+      let offset: number;
+      let mobileDesktopMode = false;
+
+      if (isMobile && width >= 768) {
+        // Mobile device but desktop-sized viewport (landscape or tablet)
+        offset = -750;
+        mobileDesktopMode = true;
+      } else if (width < 768) {
         offset = -260;
       } else if (width >= 768 && width <= 1024) {
         offset = -400;
-      } else if (width > 1024 && width <= 1100) {
-        offset = -750;
-        setIsMobileDesktopMode(true);
       } else {
         offset = -250;
-        setIsMobileDesktopMode(false);
-      }
-      alert(`Width: ${width} Offset: ${offset} Height: ${window.innerHeight}`);
-      if (videoRef.current) {
-        videoRef.current.style.top = `${offset}px`;
       }
 
-      // Fallback if screen changes from special case
-      if (!(width > 1024 && width <= 1100)) {
-        setIsMobileDesktopMode(false);
+      if (videoRef.current) {
+        requestAnimationFrame(() => {
+          if (videoRef.current) {
+            videoRef.current.style.top = `${offset}px`;
+          }
+        });
       }
+
+      setIsMobileDesktopMode(mobileDesktopMode);
     };
 
     updateLayout();
+
     window.addEventListener("resize", updateLayout);
     window.addEventListener("orientationchange", updateLayout);
+
     return () => {
       window.removeEventListener("resize", updateLayout);
       window.removeEventListener("orientationchange", updateLayout);
@@ -57,6 +63,7 @@ const Hero = () => {
         <source src="/blackhole.mp4" type="video/mp4" />
         <source src="/blackhole.webm" type="video/webm" />
       </video>
+
       {isMobileDesktopMode && (
         <>
           <br />
@@ -67,6 +74,7 @@ const Hero = () => {
           <br />
         </>
       )}
+
       <HeroContent />
     </div>
   );
