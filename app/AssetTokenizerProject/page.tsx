@@ -16,7 +16,7 @@ const ProjectsPage = () => {
       } else if (width >= 768 && width <= 1024) {
         offset = -400;
       } else if (width > 1024 && width <= 1100) {
-        offset = -750;
+        offset = -950;
       } else {
         offset = -250;
       }
